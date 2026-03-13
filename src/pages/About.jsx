@@ -3,25 +3,23 @@ import pinkCam from '../Pictures/Pink Cam w my face.png'
 import officeSiren from '../Pictures/office siren sa tabing dagat.jpg'
 import spotifyImg from '../Pictures/spotify ss.png'
 import letterboxdImg from '../Pictures/letterboxd ss.png'
-export default function About() {
+export default function About({ onClose }) {
   return (
     <div style={{ minHeight: '100vh', padding: '20px' }}>
       <div className="window" style={{ width: '90%', maxWidth: '1300px', margin: '40px auto' }}>
         <div className="title-bar">
           <div className="title-bar-text">About Me</div>
           <div className="title-bar-controls">
-            <button aria-label="Minimize"></button>
-            <button aria-label="Maximize"></button>
-            <button aria-label="Close"></button>
+            <button aria-label="Close" onClick={onClose} onMouseEnter={(e) => e.target.style.backgroundColor = '#ff0000'} onMouseLeave={(e) => e.target.style.backgroundColor = ''}></button>
           </div>
         </div>
 
-        <div className="window-body" style={{ display: 'flex', flexDirection: 'column', padding: '12px', gap: '12px', fontSize: '12px', lineHeight: '1.4', overflow: 'auto', maxHeight: '72vh', color: 'black' }}>
+        <div className="window-body" style={{ display: 'flex', flexDirection: 'column', padding: '12px', gap: '12px', fontSize: '20px', lineHeight: '1.4', overflow: 'auto', maxHeight: '72vh', color: 'black' }}>
             
             {/* Section 1: Personal Statement */}
             <div style={{ padding: '8px', backgroundColor: '#dfdfdf', border: '2px solid #808080' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '12px', alignItems: 'start' }}>
-                <p style={{ fontStyle: 'italic', marginBottom: '0px', fontSize: '17px' }}>
+                <p style={{ fontStyle: 'italic', marginBottom: '0px', fontSize: '20px' }}>
                   "An artist at heart with a background in theater direction and editorial writing, now venturing into the digital world of IT. I see code as a new language for storytelling and social media as a global stage. Currently bridging my creative roots with a BS in Information Technology, I am exploring how modern web tools can breathe new life into arts and ensure our expression remain accessible in the digital age."
                 </p>
                 <img src={pinkCam} alt="Marian with camera" style={{ width: '280px', height: 'auto', marginTop: '-90px', marginBottom: '-30px' }} />
@@ -38,8 +36,8 @@ export default function About() {
                     marginBottom: '10px'
                   }}>
                     <p style={{ fontWeight: 'bold', marginBottom: '5px' }}>Bachelor of Science in Information Technology | 2023 – Present</p>
-                    <p style={{ margin: '3px 0', fontSize: '12px' }}>Quezon City University, San Bartolome, QC (Expected June 2027)</p>
-                    <ul style={{ margin: '5px 0 0 20px', fontSize: '12px' }}>
+                    <p style={{ margin: '3px 0', fontSize: '20px' }}>Quezon City University, San Bartolome, QC (Expected June 2027)</p>
+                    <ul style={{ margin: '5px 0 0 20px', fontSize: '20px' }}>
                       <li>Key Focus: Web Design (HTML, CSS, PHP, JavaScript), Technical Writing, and Project Coordination.</li>
                     </ul>
                   </div>
@@ -50,31 +48,31 @@ export default function About() {
                     padding: '10px'
                   }}>
                     <p style={{ fontWeight: 'bold', marginBottom: '5px' }}>Senior High School: Arts and Design Track (Theater Arts) | 2020 – 2022</p>
-                    <p style={{ margin: '3px 0', fontSize: '12px' }}>Baybay City Senior High School, Baybay City</p>
-                    <ul style={{ margin: '5px 0 0 20px', fontSize: '12px' }}>
+                    <p style={{ margin: '3px 0', fontSize: '20px' }}>Baybay City Senior High School, Baybay City</p>
+                    <ul style={{ margin: '5px 0 0 20px', fontSize: '20px' }}>
                       <li>Work Immersion: Specialized in mounting cultural performances and incorporating Philippine heritage elements into creative outputs.</li>
                     </ul>
                   </div>
                 </div>
 
                 <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <img src={gradPic} alt="Grad photo" style={{ maxWidth: '150px', height: 'auto', border: '2px solid #808080' }} />
+                  <img src={gradPic} alt="Grad photo" style={{ maxWidth: '280px', height: 'auto', border: '2px solid #808080' }} />
                 </div>
             </div>
 
             {/* Section 3: Career Goals */}
             <div style={{ padding: '8px', backgroundColor: '#dfdfdf', border: '2px solid #808080' }}>
-              <p style={{ fontWeight: 'bold', marginBottom: '12px', fontSize: '14px', textAlign: 'center' }}>Career goals</p>
+              <p style={{ fontWeight: 'bold', marginBottom: '12px', fontSize: '20px', textAlign: 'center' }}>Career goals</p>
               <div style={{ display: 'flex', gap: '20px' }}>
                 <div style={{ flex: 1 }}>
                   <div style={{ 
                     background: '#dfdfdf', 
                     border: '2px solid #808080', 
                     padding: '12px',
-                    fontSize: '12px',
-                    lineHeight: '1.5'
+                    fontSize: '20px',
                   }}>
-                    <p>"Theater is my roots, writing is my voice, and IT is my new favorite medium. I don't see a wall between 'Technical' and 'Creative.' For me, UI/UX design and QA are just ways to make sure a digital experience feels as intentional as a well-directed play. My dream is to bridge the gap between the screen and the soul—using Cloud tools and Web analytics to amplify Philippine heritage, while still making time to write novels, design clothes, and paint. I'm here to prove that code can be as beautiful as a canvas, as long as you have the heart to tell a story with it."</p>
+                    <p style={{ marginBottom: '8px', textAlign: 'center', fontWeight: 'bold' }}>Future Plans:</p>
+                    <p style={{ margin: 0, textAlign: 'center' }}>I aim to leverage my theater background and writing skills in creative pursuits while maintaining a career in the tech industry.</p>
                   </div>
                 </div>
 
@@ -86,11 +84,11 @@ export default function About() {
                     background: '#dfdfdf', 
                     border: '2px solid #808080', 
                     padding: '12px',
-                    fontSize: '12px',
+                    fontSize: '20px',
                     lineHeight: '1.5'
                   }}>
                     <p style={{ fontWeight: 'bold', marginBottom: '8px', textAlign: 'center' }}>Actual Career Goal:</p>
-                    <p style={{ margin: 0, textAlign: 'center' }}>Maging office siren, whimsy, femme-fatale, nakiki-bandwagon ride sa nice trends, employee na nagdadress up according sa demographics ng job, f*ck the government, girl-boss, mamaatay din naman tayong lahat worker sipping on matchiall and yosi.</p>
+                    <p style={{ margin: 0, textAlign: 'center' }}>Maging "office siren, whimsy, femme-fatale, nakiki-bandwagon ride sa nice trends, employee na nagdadress up according sa demographics ng job, f*ck the government, girl-boss, mamamatay din naman tayong lahat" worker sipping on matchia and yosi.</p>
                   </div>
                 </div>
               </div>
@@ -105,7 +103,7 @@ export default function About() {
                     background: '#dfdfdf', 
                     border: '2px solid #808080', 
                     padding: '10px',
-                    fontSize: '12px'
+                    fontSize: '20px'
                   }}>
                     <p>I don't even know bat nag-add pa ako ng extra parts sa about me huy. Ang hobbies ko ay manood ng movies or listen to music or doomscroll--- anything just to silence the voices because i didn't plan this life.</p>
                   </div>
@@ -117,7 +115,7 @@ export default function About() {
                     background: '#dfdfdf', 
                     border: '2px solid #808080', 
                     padding: '10px',
-                    fontSize: '12px'
+                    fontSize: '20px'
                   }}>
                     <p>Panoorin si Sim na mag work out and hintayin until he's whimpering then pretend nothing happened. Or sewing, fashion, cars, art, bands, gigs, photography, tattoo enthusiast, bang hakot lahat walang itinira akin ang Q.C.</p>
                   </div>
@@ -135,7 +133,7 @@ export default function About() {
                       background: '#dfdfdf', 
                       border: '2px solid #808080', 
                       padding: '10px',
-                      fontSize: '12px'
+                      fontSize: '20px'
                     }}>
                       <p>Ayan profile ko sa Spotify (I boycott them so this is for aesthetics nalang since last year. Also, FREE PALESTINE. Alin ang West Philippine Sea. Wag kayong maging fanatic or misogynist lalo na kasi sa babae kayo nanggaling.</p>
                     </div>
@@ -147,19 +145,23 @@ export default function About() {
                       background: '#dfdfdf', 
                       border: '2px solid #808080', 
                       padding: '10px',
-                      fontSize: '12px'
+                      fontSize: '20px'
                     }}>
-                      <p>And gumawa din me ng LetterBoxd kasi nakakatuwa naman if dito pa ako gagawa ng lists diba hay. HAHAHAHAHA kulang pa yung lists but i hope ykwim in these lists. Horror, alternative girlie since childhood.</p>
+                      <p>And gumawa din me ng LetterBoxd kasi nakakapagod naman if dito pa ako gagawa ng lists diba hay. HAHAHAHAHA kulang pa yung lists but i hope ykwim in these lists. Horror, alternative girlie since childhood.</p>
                     </div>
                   </div>
                 </div>
 
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   {spotifyImg && (
-                    <img src={spotifyImg} alt="Spotify profile" style={{ width: '100%', height: 'auto', border: '2px solid #808080' }} />
+                    <a href="https://open.spotify.com/user/31wq4o2hybt3ppjmanr4gks4iff4?si=a282690d248d4861" target="_blank" rel="noopener noreferrer" style={{ cursor: 'pointer' }}>
+                      <img src={spotifyImg} alt="Spotify profile" style={{ width: '100%', height: 'auto', border: '2px solid #808080', transition: 'opacity 0.2s', opacity: 1 }} onMouseEnter={(e) => e.target.style.opacity = '0.8'} onMouseLeave={(e) => e.target.style.opacity = '1'} />
+                    </a>
                   )}
                   {letterboxdImg && (
-                    <img src={letterboxdImg} alt="Letterboxd profile" style={{ width: '100%', height: 'auto', border: '2px solid #808080' }} />
+                    <a href="https://boxd.it/k0PC7" target="_blank" rel="noopener noreferrer" style={{ cursor: 'pointer' }}>
+                      <img src={letterboxdImg} alt="Letterboxd profile" style={{ width: '100%', height: 'auto', border: '2px solid #808080', transition: 'opacity 0.2s', opacity: 1 }} onMouseEnter={(e) => e.target.style.opacity = '0.8'} onMouseLeave={(e) => e.target.style.opacity = '1'} />
+                    </a>
                   )}
                 </div>
               </div>

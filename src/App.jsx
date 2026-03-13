@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -14,14 +14,36 @@ import contactIcon from './Icons/Message-contacts icon.png'
 import weirdcoreBg from './Pictures/weirdcore-4k-wallpaper-3840x2160-21743.jpg'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home')
+  const [openPages, setOpenPages] = useState([])
+  const [activePage, setActivePage] = useState(null)
+  const [currentTime, setCurrentTime] = useState(new Date())
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date())
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
+
+  const openPage = (pageId) => {
+    if (!openPages.includes(pageId)) {
+      setOpenPages([...openPages, pageId])
+    }
+    setActivePage(pageId)
+  }
+
+  const closePage = () => {
+    setOpenPages([])
+    setActivePage(null)
+  }
 
   const pages = {
-    home: <Home />,
-    about: <About />,
-    projects: <Projects />,
-    skills: <Skills />,
-    contact: <Contact />
+    home: <Home onClose={() => closePage()} />,
+    about: <About onClose={() => closePage()} />,
+    projects: <Projects onClose={() => closePage()} />,
+    skills: <Skills onClose={() => closePage()} />,
+    contact: <Contact onClose={() => closePage()} />
   }
 
   const navItems = [
@@ -39,8 +61,8 @@ function App() {
           {navItems.map(item => (
             <button
               key={item.id}
-              className={`nav-icon ${currentPage === item.id ? 'active' : ''}`}
-              onClick={() => setCurrentPage(item.id)}
+              className={`nav-icon ${activePage === item.id ? 'active' : ''}`}
+              onClick={() => openPage(item.id)}
               title={item.label}
             >
               <img src={item.icon} alt={item.label} />
@@ -52,7 +74,7 @@ function App() {
 
       <main className="main-content">
         <div className="content-window">
-          {pages[currentPage]}
+          {activePage && openPages.includes(activePage) && pages[activePage]}
         </div>
       </main>
 
@@ -65,8 +87,8 @@ function App() {
         <div className="taskbar-center"></div>
         <div className="taskbar-right">
           <div className="system-tray">
-            <span className="time-display">5:19 PM</span>
-            <span className="date-display">1/16/2011</span>
+            <span className="time-display">{currentTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })}</span>
+            <span className="date-display">{currentTime.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' })}</span>
           </div>
         </div>
       </div>

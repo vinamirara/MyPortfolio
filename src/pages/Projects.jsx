@@ -1,72 +1,87 @@
 import folderWithImageIcon from '../Icons/folder with image.png'
 import documentIcon from '../Icons/Document Icon for Projects.png'
+import furEverCarePreview from '../Pictures/Fur-ever care pic preview.png'
+import cinevaultPreview from '../Pictures/cinevault preview.png'
+import homescapesPreview from '../Pictures/Homescapes.png'
+import procvizPreview from '../Pictures/ProcViz.jpg'
+import qclidPreview from '../Pictures/qclid aralan.jpg'
 import { useState } from 'react'
 
-export default function Projects() {
+export default function Projects({ onClose }) {
   const [selectedProject, setSelectedProject] = useState(null)
+
+  const handleProjectClick = (project) => {
+    if (project.url) {
+      window.open(project.url, '_blank')
+    } else {
+      setSelectedProject(project)
+    }
+  }
 
   const projects = [
     {
       id: 1,
       title: 'Fur-Ever Care Veterinary System',
       icon: folderWithImageIcon,
-      description: 'Add your project description here...',
-      details: 'Add detailed information about this project. Include technologies used, goals, and outcomes.'
+      preview: furEverCarePreview,
+      description: 'This study proposes the development of an integrated Veterinary Management System (VMS) comprising subsystems for appointment scheduling, human resources, inventory management, sales and finance, and marketing.',
+      details: 'The system aims to centralize data, automate key processes, and enhance communication within the clinic. Through the integration of these subsystems, the VMS is expected to reduce manual workloads, improve information accuracy, and support effective decision-making. Ultimately, the system seeks to enhance operational efficiency, improve staff productivity, and strengthen client satisfaction, demonstrating the importance of digital integration in modern veterinary practice.'
     },
     {
       id: 2,
       title: 'CineVault',
       icon: folderWithImageIcon,
-      description: 'Add your project description here...',
-      details: 'Add detailed information about this project. Include technologies used, goals, and outcomes.'
+      preview: cinevaultPreview,
+      description: 'CineVault was developed as a dedicated platform designed to provide a comprehensive, user-review-free database of cinematic information that is void of subjective opinions from user ratings.',
+      details: 'This platform will serve as a reliable resource for researchers, film professionals, and enthusiasts by offering accurate information such as movie rating from MPA (Motion Picture Association), release dates, genres, and plot synopses, thereby addressing the need for a focused and unbiased source of movie data.'
     },
     {
       id: 3,
       title: 'Homescapes: Reservation System',
       icon: folderWithImageIcon,
-      description: 'Add your project description here...',
-      details: 'Add detailed information about this project. Include technologies used, goals, and outcomes.'
+      preview: homescapesPreview,
+      description: 'Homescapes is an innovative reservation management system designed to simplify the process of listing, booking, and managing short-term accommodations.',
+      details: 'Unlike traditional booking methods, it prioritizes ease of use, reliability, and accessibility, offering a smooth and paper-free experience. The system enables hosts to list accommodations, manage reservations, and communicate with guests, reducing manual tasks and optimizing the booking process. Through these features, Homescapes improves organization and customer satisfaction.'
     },
     {
       id: 4,
       title: 'ProViz: CPU Scheduling Visualizer',
       icon: folderWithImageIcon,
-      description: 'Add your project description here...',
-      details: 'Add detailed information about this project. Include technologies used, goals, and outcomes.'
+      preview: procvizPreview,
+      description: 'ProcViz was developed to address learning difficulties by providing a visual and interactive way to explore CPU scheduling.',
+      details: 'According to Sibia et al. (2025), visual representations help learners better understand abstract concepts by enhancing comprehension and engagement. Instead of manually computing values or imagining how processes run, users can input arrival times, burst times, and priorities, choose an algorithm, and observe process execution through dynamic visual displays. The system supports commonly taught algorithms including First Come First Serve, Shortest Job First, Preemptive Non-Priority, and Round Robin, enabling practical comparison of their distinct behaviors.'
     },
     {
       id: 5,
-      title: 'QCLid Arabian Hub',
+      title: 'QCLid Aralan Hub',
       icon: folderWithImageIcon,
-      description: 'Add your project description here...',
-      details: 'Add detailed information about this project. Include technologies used, goals, and outcomes.'
+      preview: qclidPreview,
+      description: 'QCLid-Aralan is an innovative Learning Management System (LMS) designed to enhance the learning experience of Quezon City University students.',
+      details: 'It serves as a centralized hub for accessing course materials, submitting assignments, participating in discussions, and receiving timely feedback. By leveraging technology, the LMS aims to provide students with a flexible and engaging learning environment.'
     },
     {
       id: 6,
       title: 'Cybersecurity Vulnerabilities in Ph Govt.',
       icon: documentIcon,
-      description: 'Add your project description here...',
-      details: 'Add detailed information about this project. Include technologies used, goals, and outcomes.'
+      url: 'https://docs.google.com/document/d/1s1t-JmD_wMZNppzIlUOxvVwApNclqX0uIvqZLST-1lY/edit?usp=drivesdk'
     },
     {
       id: 7,
       title: 'Pop Culture Trends and Phone Preferences',
       icon: documentIcon,
-      description: 'Add your project description here...',
-      details: 'Add detailed information about this project. Include technologies used, goals, and outcomes.'
+      url: 'https://docs.google.com/document/d/1IkHhhLSAVK3G1QNuA4DW0dLMWFxKxJbzaI43-kgNs2U/edit?usp=drivesdk'
     },
     {
       id: 8,
       title: 'Ban on Single-Use Plastic Ordinance',
       icon: documentIcon,
-      description: 'Add your project description here...',
-      details: 'Add detailed information about this project. Include technologies used, goals, and outcomes.'
+      url: 'https://docs.google.com/document/d/1deEjsY1e2MThBqFAEYpmgW2fgwJYt0xaKlz8Ie8eU5I/edit?usp=drivesdk'
     }
   ]
 
   const handleNextProject = () => {
     const idx = projects.findIndex(p => p.id === selectedProject.id)
-    if (idx < projects.length - 1) {
+    if (idx < 4) {
       setSelectedProject(projects[idx + 1])
     }
   }
@@ -79,7 +94,7 @@ export default function Projects() {
   }
 
   const currentIndex = selectedProject ? projects.findIndex(p => p.id === selectedProject.id) : 0
-  const canGoNext = currentIndex < projects.length - 1
+  const canGoNext = currentIndex >= 0 && currentIndex < 4
   const canGoPrev = currentIndex > 0
 
   return (
@@ -88,9 +103,7 @@ export default function Projects() {
         <div className="title-bar">
           <div className="title-bar-text">Projects</div>
           <div className="title-bar-controls">
-            <button aria-label="Minimize"></button>
-            <button aria-label="Maximize"></button>
-            <button aria-label="Close"></button>
+            <button aria-label="Close" onClick={onClose} onMouseEnter={(e) => e.target.style.backgroundColor = '#ff0000'} onMouseLeave={(e) => e.target.style.backgroundColor = ''}></button>
           </div>
         </div>
 
@@ -102,7 +115,7 @@ export default function Projects() {
               <div 
                 key={index} 
                 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '15px', cursor: 'pointer', transition: 'transform 0.3s ease, opacity 0.3s ease', padding: '15px' }}
-                onClick={() => setSelectedProject(project)}
+                onClick={() => handleProjectClick(project)}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-5px)'
                   e.currentTarget.style.opacity = '0.8'
@@ -130,7 +143,7 @@ export default function Projects() {
               onClick={(e) => { e.stopPropagation(); if (canGoPrev) handlePreviousProject(); }}
               disabled={!canGoPrev}
             >
-              Left
+              ←
             </button>
 
             <div 
@@ -141,9 +154,7 @@ export default function Projects() {
               <div className="title-bar">
                 <div className="title-bar-text">Project Details</div>
                 <div className="title-bar-controls">
-                  <button aria-label="Minimize"></button>
-                  <button aria-label="Maximize"></button>
-                  <button aria-label="Close" onClick={() => setSelectedProject(null)}></button>
+                  <button aria-label="Close" onClick={() => setSelectedProject(null)} onMouseEnter={(e) => e.target.style.backgroundColor = '#ff0000'} onMouseLeave={(e) => e.target.style.backgroundColor = ''}></button>
                 </div>
               </div>
 
@@ -152,7 +163,7 @@ export default function Projects() {
                   {selectedProject.title}
                 </div>
 
-                <img src={selectedProject.icon} alt={selectedProject.title} style={{ width: '100px', height: '100px', margin: '0 auto 15px', objectFit: 'contain' }} />
+                <img src={selectedProject.preview || selectedProject.icon} alt={selectedProject.title} style={{ width: '100%', height: 'auto', margin: '0 auto 15px', objectFit: 'contain', maxHeight: '300px' }} />
 
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#003da5', fontSize: '12px' }}>Description:</strong>
@@ -175,7 +186,7 @@ export default function Projects() {
               onClick={(e) => { e.stopPropagation(); if (canGoNext) handleNextProject(); }}
               disabled={!canGoNext}
             >
-              Right
+              →
             </button>
           </div>
         </div>

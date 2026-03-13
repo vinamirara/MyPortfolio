@@ -50,10 +50,10 @@ body {
   gap: 6px;
   padding: 6px;
   background: transparent;
-  border: 2px solid transparent;
+  border: none;
   cursor: pointer;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 0;
   transition: all 0.2s;
 }
 
@@ -68,7 +68,7 @@ body {
   font-size: 10px;
   color: #fff;
   text-align: center;
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 0px 0px 8px rgba(0, 0, 0, 0.8);
   word-wrap: break-word;
   width: 80px;
@@ -77,13 +77,13 @@ body {
 }
 
 .nav-icon:hover {
-  border-color: rgba(255, 255, 255, 0.5);
-  border-radius: 6px;
+  border-color: transparent;
+  border-radius: 0;
 }
 
 .nav-icon.active {
-  border-color: rgba(157, 78, 221, 0.8);
-  border-radius: 6px;
+  border-color: transparent;
+  border-radius: 0;
   box-shadow: 0 0 15px rgba(157, 78, 221, 0.6);
 }
 
@@ -142,22 +142,22 @@ body {
   box-sizing: border-box;
 }
 
-/* TASKBAR AT BOTTOM */
+/* TASKBAR AT BOTTOM - Classic Windows 95/98 Theme */
 .taskbar-bottom {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   height: 40px;
-  background: linear-gradient(180deg, #c0c0c0 0%, #aca899 100%);
-  border-top: 2px solid;
-  border-color: #dfdfdf #0a0e27 #0a0e27 #dfdfdf;
+  background: #c0c0c0;
+  border-top: 2px solid #dfdfdf;
+  border-bottom: 2px solid #808080;
   display: flex;
   align-items: center;
   padding: 2px 4px;
   gap: 4px;
   z-index: 200;
-  box-shadow: inset 1px 1px 0 0 #ffffff;
+  box-shadow: inset 1px 1px 0 0 #ffffff, inset -1px -1px 0 0 #000000;
 }
 
 .taskbar-left {
@@ -166,31 +166,34 @@ body {
 }
 
 .windows-button {
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 11px;
-  padding: 3px 8px;
-  background: linear-gradient(180deg, #f0f0f0 0%, #d0d0d0 100%);
+  padding: 4px 12px;
+  background: linear-gradient(180deg, #e8e8e8 0%, #d0d0d0 100%);
   border: 2px solid;
   border-color: #dfdfdf #808080 #808080 #dfdfdf;
-  color: #000;
+  color: #000000;
   cursor: pointer;
   transition: all 0.1s;
   border-radius: 2px;
   text-shadow: 1px 1px 0 #ffffff;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   font-weight: bold;
+  box-shadow: inset 1px 1px 0 0 #ffffff;
 }
 
 .windows-button:hover {
-  background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
-  border-color: #0a246a #404040 #404040 #0a246a;
+  background: linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%);
+  border-color: #dfdfdf #808080 #808080 #dfdfdf;
+  box-shadow: inset 1px 1px 0 0 #ffffff, inset -1px -1px 0 0 #808080;
 }
 
 .windows-button:active {
   background: linear-gradient(180deg, #d0d0d0 0%, #f0f0f0 100%);
   border-color: #808080 #dfdfdf #dfdfdf #808080;
+  box-shadow: inset 1px 1px 0 0 #000000, inset -1px -1px 0 0 #ffffff;
 }
 
 .windows-logo {
@@ -200,8 +203,8 @@ body {
 .taskbar-center {
   flex: 1;
   height: 100%;
-  border-left: 1px solid #999;
-  border-right: 1px solid #999;
+  border-left: 1px solid #dfdfdf;
+  border-right: 1px solid #808080;
   margin: 0 4px;
 }
 
@@ -217,13 +220,13 @@ body {
   align-items: flex-end;
   gap: 0;
   padding: 2px 8px;
-  background: linear-gradient(180deg, #c0c0c0 0%, #aca899 100%);
+  background: linear-gradient(180deg, #e8e8e8 0%, #d0d0d0 100%);
   border: 2px solid;
-  border-color: #dfdfdf #404040 #404040 #dfdfdf;
+  border-color: #dfdfdf #808080 #808080 #dfdfdf;
   border-radius: 2px;
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 9px;
-  color: #000;
+  color: #000000;
   text-shadow: 1px 1px 0 #ffffff;
   line-height: 1.2;
 }
@@ -238,7 +241,7 @@ body {
 
 /* TYPOGRAPHY */
 .content-window h1 {
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 48px;
   color: #9d4edd;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7),
@@ -249,7 +252,7 @@ body {
 }
 
 .content-window h2 {
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 32px;
   color: #c77dff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -259,7 +262,7 @@ body {
 }
 
 .content-window h3 {
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 22px;
   color: #e0aaff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -267,7 +270,7 @@ body {
 }
 
 .content-window p {
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 14px;
   color: #d0a8ff;
   line-height: 1.8;
@@ -289,7 +292,7 @@ body {
 
 /* WINDOWS 7 BUTTONS */
 .btn {
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 11px;
   padding: 4px 12px;
   background: linear-gradient(180deg, #f0f0f0 0%, #e0e0e0 100%);
@@ -395,7 +398,7 @@ section {
 
 /* FORM ELEMENTS */
 input, textarea {
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 11px;
   padding: 4px 8px;
   background: #ffffff;
@@ -567,7 +570,7 @@ textarea {
 }
 
 .win7-title {
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 12px;
   font-weight: bold;
   padding-left: 4px;
@@ -587,7 +590,7 @@ textarea {
   width: 18px;
   height: 18px;
   padding: 0;
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 10px;
   background: linear-gradient(180deg, #f0f0f0 0%, #d0d0d0 100%);
   border: 1px solid;
@@ -623,7 +626,7 @@ textarea {
 }
 
 .win7-content h1 {
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 28px;
   color: #000080;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
@@ -667,7 +670,7 @@ textarea {
   border-color: #dfdfdf #808080 #808080 #dfdfdf;
   padding: 12px;
   margin-bottom: 15px;
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 12px;
   color: #000000;
   line-height: 1.6;
@@ -717,7 +720,7 @@ textarea {
   border: 1px solid #808080;
   padding: 12px;
   margin-bottom: 12px;
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 13px;
   box-sizing: border-box;
 }
