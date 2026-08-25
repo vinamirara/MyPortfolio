@@ -72,7 +72,7 @@ export default function About({ onClose }) {
                     fontSize: '20px',
                   }}>
                     <p style={{ marginBottom: '8px', textAlign: 'center', fontWeight: 'bold' }}>Future Plans:</p>
-                    <p style={{ margin: 0, textAlign: 'center' }}>I aim to leverage my theater background and writing skills in creative pursuits while maintaining a career in the tech industry.</p>
+                    <p style={{ margin: 0, textAlign: 'center' }}>I aim to be an IT Professional in the future, one that combines my technical skills with my creative background. I want to have a work that makes me happy.</p>
                   </div>
                 </div>
 
@@ -88,7 +88,7 @@ export default function About({ onClose }) {
                     lineHeight: '1.5'
                   }}>
                     <p style={{ fontWeight: 'bold', marginBottom: '8px', textAlign: 'center' }}>Actual Career Goal:</p>
-                    <p style={{ margin: 0, textAlign: 'center' }}>Maging "office siren, whimsy, femme-fatale, nakiki-bandwagon ride sa nice trends, employee na nagdadress up according sa demographics ng job, f*ck the government, girl-boss, mamamatay din naman tayong lahat" worker sipping on matchia and yosi.</p>
+                    <p style={{ margin: 0, textAlign: 'center' }}>Maging cool tech-worker na nakiki-bandwagon ride sa niche trends, employee na nagdadress up according sa demographics ng job, performative pero dapat may bitaw sa work.</p>
                   </div>
                 </div>
               </div>
