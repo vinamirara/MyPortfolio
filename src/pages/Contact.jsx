@@ -66,7 +66,7 @@ export default function Contact({ onClose }) {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px', borderRight: '1px solid #ccc', flexShrink: 0, overflow: 'auto' }}>
             {platforms.map((platform) => (
               <button key={platform.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '16px 12px', transition: 'all 0.2s', backgroundColor: selectedPlatform === platform.id ? '#e0e0e0' : '#f5f5f5', border: '1px solid #ccc', textAlign: 'center', fontSize: '12px', fontWeight: '600', width: '100%', color: 'black' }} onClick={() => setSelectedPlatform(platform.id)}>
-                <img src={platform.logo} alt={platform.name} style={{ width: '40px', height: '40px' }} />
+                <img src={platform.logo} alt={platform.name} style={{ width: '40px', height: '40px', objectFit: 'contain', objectPosition: 'center' }} />
                 <span>{platform.name}</span>
               </button>
             ))}

@@ -87,8 +87,8 @@ export default function About({ onClose }) {
                     fontSize: '20px',
                     lineHeight: '1.5'
                   }}>
-                    <p style={{ fontWeight: 'bold', marginBottom: '8px', textAlign: 'center' }}>Actual Career Goal:</p>
-                    <p style={{ margin: 0, textAlign: 'center' }}>Maging cool tech-worker na nakiki-bandwagon ride sa niche trends, employee na nagdadress up according sa demographics ng job, performative pero dapat may bitaw sa work.</p>
+                    <p style={{ fontWeight: 'bold', marginBottom: '8px', textAlign: 'center' }}>How I Plan to Achieve it:</p>
+                    <p style={{ margin: 0, textAlign: 'center' }}>I plan to achieve this by continuously learning. I would keep myself inspired by seeing all the creative people who are in the tech industry; never losing the heart to do what I love.</p>
                   </div>
                 </div>
               </div>
@@ -105,7 +105,7 @@ export default function About({ onClose }) {
                     padding: '10px',
                     fontSize: '20px'
                   }}>
-                    <p>I don't even know bat nag-add pa ako ng extra parts sa about me huy. Ang hobbies ko ay manood ng movies or listen to music or doomscroll--- anything just to silence the voices because i didn't plan this life.</p>
+                    <p>My current hobbies are listening to music and watching movies. I also love to explore visual novels as I have plans of making one myself. I try my best to learn so that I could put my planned outputs to life.</p>
                   </div>
                 </div>
 
@@ -117,7 +117,7 @@ export default function About({ onClose }) {
                     padding: '10px',
                     fontSize: '20px'
                   }}>
-                    <p>Panoorin si Sim na mag work out and hintayin until he's whimpering then pretend nothing happened. Or sewing, fashion, cars, art, bands, gigs, photography, tattoo enthusiast, bang hakot lahat walang itinira akin ang Q.C.</p>
+                    <p>Visual Novels, Animation, Indie Games, art made by people who love creating for the sake of creating because they are actually in  love with what they do.</p>
                   </div>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function About({ onClose }) {
                       padding: '10px',
                       fontSize: '20px'
                     }}>
-                      <p>Ayan profile ko sa Spotify (I boycott them so this is for aesthetics nalang since last year. Also, FREE PALESTINE. Alin ang West Philippine Sea. Wag kayong maging fanatic or misogynist lalo na kasi sa babae kayo nanggaling.</p>
+                      <p>Ayan profile ko sa Spotify (it's literally just playlists that I kept on updating because I can't listen to music continuously unless they're from the same artist, genre, album or literally just the same vibe. </p>
                     </div>
                   </div>
 
@@ -147,7 +147,7 @@ export default function About({ onClose }) {
                       padding: '10px',
                       fontSize: '20px'
                     }}>
-                      <p>And gumawa din me ng LetterBoxd kasi nakakapagod naman if dito pa ako gagawa ng lists diba hay. HAHAHAHAHA kulang pa yung lists but i hope ykwim in these lists. Horror, alternative girlie since childhood.</p>
+                      <p>And gumawa din me ng LetterBoxd kasi nakakapagod naman if dito pa ako gagawa ng lists huhu. HAHAHAHAHA kulang pa yung lists but i hope ykwim in these lists. Horror, alternative girlie since childhood.</p>
                     </div>
                   </div>
                 </div>
